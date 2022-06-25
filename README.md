@@ -10,4 +10,6 @@ cluster access to the following:
 
 As a stretch goal, if there's time, I'd like to give it access to a Cloud SQL database as well. 
 
+I'm using the following to guide me:
 
+ - https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
