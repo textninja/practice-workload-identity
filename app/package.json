@@ -1,0 +1,13 @@
+{
+  "name": "practice-workload-identity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Joe Taylor <joe@textninja.net>",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/storage": "^6.2.0"
+  }
+}
