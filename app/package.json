@@ -4,10 +4,13 @@
   "main": "index.js",
   "author": "Joe Taylor <joe@textninja.net>",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.mjs"
   },
   "license": "MIT",
   "dependencies": {
-    "@google-cloud/storage": "^6.2.0"
+    "@google-cloud/bigquery": "^6.0.0",
+    "@google-cloud/secret-manager": "^4.0.0",
+    "@google-cloud/storage": "^6.2.0",
+    "chalk": "^5.0.1"
   }
 }

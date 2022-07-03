@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: practice-workload-identity
-  namespace: $K8S_NAMESPACE
+  namespace: $NJAPWI_K8S_NAMESPACE
   labels:
     app: practice-workload-identity
 spec:
@@ -12,7 +12,19 @@ spec:
       labels:
         app: practice-workload-identity
     spec:
+      serviceAccountName: workload-identity
+      nodeSelector:
+        iam.gke.io/gke-metadata-server-enabled: "true"
       containers:
       - name: practice-workload-identity
-        image: $DOCKER_IMAGE_NAME:latest
+        image: $NJAPWI_DOCKER_IMAGE_NAME:latest
+        env:
+          - name: NJAPWI_DOCKER_IMAGE_NAME
+            value: $NJAPWI_DOCKER_IMAGE_NAME
+          - name: NJAPWI_K8S_NAMESPACE
+            value: $NJAPWI_K8S_NAMESPACE
+          - name: NJAPWI_GCP_BUCKET
+            value: $NJAPWI_GCP_BUCKET
+          - name: NJAPWI_SECRET_VERSION_NAME
+            value: $NJAPWI_SECRET_VERSION_NAME
       restartPolicy: Never
